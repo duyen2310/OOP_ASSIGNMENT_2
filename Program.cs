@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using static System.Console;
 namespace COMP1202_Ass2_32
@@ -162,8 +163,56 @@ namespace COMP1202_Ass2_32
                 }
             }
         }
+        public static void addProduct()
+        {
+            Console.WriteLine("We will create a new product!");
+            Console.WriteLine("Do you know the item number? y/n");
+            string user_choice;
+            int item_number;
+            string item_name;
+            int item_price;
+            int user_rating;
+            int quantity;
+            while (true)
+            {
+                // We keep promting the user to chose a valid option between yes or no
+                user_choice = Console.ReadLine();
+                if (user_choice == "y")
+                {
+                    Console.WriteLine("Please enter your 4-digit number");
+                    string input = Console.ReadLine();
+                    while (!Game.CheckItemNumber(input))
+                    {
+                        Console.WriteLine("Please enter a 4 digit number");
+                        input = Console.ReadLine();
+                    }
+                    item_number = Convert.ToInt32(input);
+                    break;
+                }
+                else if (user_choice == "n")
+                {
+                    Random random = new Random();
+                    item_number = random.Next(1000, 10000);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid option, y/n");
+                }
+            }
+            Console.WriteLine("Please type in the item name");
+            item_name = Game.ItemNameValidation();
+            Console.WriteLine("Please enter the price for the item");
+            item_price = Game.checkPriceValidation();
+            Console.WriteLine("Please choose a rating for the game, 1-5");
+            user_rating = Game.userRatingCheck();
+            quantity = Game.GetValidIntegerFromUser();
+            // Add the game remaining to the storage...
+            Game new_game = new Game(item_number, item_name, item_price, user_rating, quantity);
+            Storage.addGameToStorage(new_game); // to be fixed
+        }
     }
-    internal class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
@@ -178,58 +227,12 @@ namespace COMP1202_Ass2_32
                 Console.WriteLine("4. Statistical analysis");
                 Console.WriteLine("5. To exit");
                 Console.WriteLine("Pleasse chose one of the respective options: 1, 2, 3, 4, 5");
-                int chosen_option = Convert.ToInt32(Console.ReadLine());
-                switch (chosen_option)
-                {
-                    case 1:
-                        Console.WriteLine("We will create a new game in the inventory!");
-                        Console.WriteLine("Do you know the item number? y/n");
-                        string user_choice;
-                        int item_number;
-                        string item_name;
-                        int item_price;
-                        int user_rating;
-                        int quantity;
-                        while (true)
-                        {
-                            // We keep promting the user to chose a valid option between yes or no
-                            user_choice = Console.ReadLine();
-                            if (user_choice == "y")
-                            {
-                                Console.WriteLine("Please enter your 4-digit number");
-                                string input = Console.ReadLine();
-                                while (!Game.CheckItemNumber(input))
-                                {
-                                    Console.WriteLine("Please enter a 4 digit number");
-                                    input = Console.ReadLine();
-                                }
-                                item_number = Convert.ToInt32(input);
-                                break;
-                            }
-                            else if (user_choice == "n")
-                            {
-                                Random random = new Random();
-                                item_number = random.Next(1000, 10000);
-                                break;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Please enter a valid option, y/n");
-                            }
-                        }
-                        Console.WriteLine("Please type in the item name");
-                        item_name = Game.ItemNameValidation();
-                        Console.WriteLine("Please enter the price for the item");
-                        item_price = Game.checkPriceValidation();
-                        Console.WriteLine("Please choose a rating for the game, 1-5");
-                        user_rating = Game.userRatingCheck();
-                        quantity = Game.GetValidIntegerFromUser();
-                    // Add the game remaining to the storage...
-                        Game new_game = new Game(item_number, item_name, item_price, user_rating, quantity);
-                        Storage.addGameToStorage(new_game); // to be fixed
-                    case 2:
+                int chosen_option = Game.userRatingCheck();
 
+                if (chosen_option == 1) {
+                    Storage.addProduct();
                 }
+                
             }
         }
     }

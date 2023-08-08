@@ -1,0 +1,15 @@
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\bin\Debug\net7.0\COMP1202_Ass2_32.exe
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\bin\Debug\net7.0\COMP1202_Ass2_32.deps.json
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\bin\Debug\net7.0\COMP1202_Ass2_32.runtimeconfig.json
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\bin\Debug\net7.0\COMP1202_Ass2_32.dll
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\bin\Debug\net7.0\COMP1202_Ass2_32.pdb
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.AssemblyInfoInputs.cache
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.AssemblyInfo.cs
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.dll
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\refint\COMP1202_Ass2_32.dll
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.pdb
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\COMP1202_Ass2_32.genruntimeconfig.cache
+C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\obj\Debug\net7.0\ref\COMP1202_Ass2_32.dll
