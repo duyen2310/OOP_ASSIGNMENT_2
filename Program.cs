@@ -52,11 +52,11 @@ namespace COMP1202_Ass2_32
         }
         public static bool CheckItemNumber(string str)
         {
-            if(str.Length !=4)
+            if (str.Length != 4)
             {
                 return false;
             }
-            else if(!int.TryParse(str, out _))
+            else if (!int.TryParse(str, out _))
             {
                 return false;
             }
@@ -88,7 +88,7 @@ namespace COMP1202_Ass2_32
             Console.WriteLine("Please enter a number between 1 and 5: ");
             string userInput = Console.ReadLine();
 
-            while (IsValidInput(userInput))
+            while (!IsValidInput(userInput))
             {
                 Console.WriteLine("Invalid input. Please enter a number between 1 and 5:");
                 userInput = Console.ReadLine();
@@ -145,25 +145,27 @@ namespace COMP1202_Ass2_32
                 WriteLine("Quantity: ========> " + game.getQuantity() + "\n\n");
             }
         }
-        public static void addGameToStorage(Game game)
+        public void AddGameToStorage(Game game)
         {
-
+            Game[] newGamesArray = new Game[games.Length + 1];
+            Array.Copy(games, newGamesArray, games.Length);
+            newGamesArray[newGamesArray.Length - 1] = game;
+            games = newGamesArray;
         }
-
 
         public void SearchingOnMaxPrice()
         {
             Console.WriteLine("Games with price less than or equal to: \n ");
-            maxPrice = Game.GetValidIntegerFromUser(); 
+            maxPrice = Game.GetValidIntegerFromUser();
             foreach (Game game in games)
             {
-                if (game.getPrice() <= maxPrice) 
+                if (game.getPrice() <= maxPrice)
                 {
                     WriteLine(game.ToString());
                 }
             }
         }
-        public static void addProduct()
+        public void addProduct()
         {
             Console.WriteLine("We will create a new product!");
             Console.WriteLine("Do you know the item number? y/n");
@@ -209,13 +211,24 @@ namespace COMP1202_Ass2_32
             quantity = Game.GetValidIntegerFromUser();
             // Add the game remaining to the storage...
             Game new_game = new Game(item_number, item_name, item_price, user_rating, quantity);
-            Storage.addGameToStorage(new_game); // to be fixed
+            AddGameToStorage(new_game); // to be fixed
+            printGame();
         }
     }
     public class Program
     {
         public static void Main(string[] args)
         {
+            List<Game> initialGames = new List<Game>
+            {
+                new Game(1212, "mario", 2, 2, 1),
+                new Game(1414, "now", 2, 2, 1)
+            };
+
+            Storage hehe = new Storage(initialGames.ToArray());
+
+
+            // Print games after adding the new one
             Console.WriteLine("Welcome to our store");
             while (true)
             {
@@ -229,8 +242,11 @@ namespace COMP1202_Ass2_32
                 Console.WriteLine("Pleasse chose one of the respective options: 1, 2, 3, 4, 5");
                 int chosen_option = Game.userRatingCheck();
 
-                if (chosen_option == 1) {
-                    Storage.addProduct();
+                if (chosen_option == 1)
+                {
+
+                    hehe.addProduct();
+                    hehe.printGame();
                 }
             }
         }
