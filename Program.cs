@@ -88,7 +88,7 @@ namespace COMP1202_Ass2_32
             Console.WriteLine("Please enter a number between 1 and 5: ");
             string userInput = Console.ReadLine();
 
-            while (!IsValidInput(userInput))
+            while (IsValidInput(userInput))
             {
                 Console.WriteLine("Invalid input. Please enter a number between 1 and 5:");
                 userInput = Console.ReadLine();
@@ -114,7 +114,7 @@ namespace COMP1202_Ass2_32
             Console.WriteLine("Please enter the name of the item");
             string userInput = Console.ReadLine();
 
-            while (!string.IsNullOrEmpty(userInput))
+            while (string.IsNullOrEmpty(userInput))
             {
                 Console.WriteLine("The text was empty. Please enter a valid name!!");
                 userInput = Console.ReadLine();
@@ -232,7 +232,6 @@ namespace COMP1202_Ass2_32
                 if (chosen_option == 1) {
                     Storage.addProduct();
                 }
-                
             }
         }
     }

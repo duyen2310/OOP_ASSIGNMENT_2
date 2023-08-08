@@ -5,7 +5,13 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+<<<<<<< HEAD
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = COMP1202_Ass2_32
 build_property.ProjectDir = C:\Users\gabri\Documents\GitHub\OOP_ASSIGNMENT_2\
+=======
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = COMP1202_Ass2_32
+build_property.ProjectDir = /Users/miameow/Documents/GitHub/OOP_ASSIGNMENT_2/
+>>>>>>> 83072f43b9f5e626c5564f35c87fa32e31786b10
